@@ -72,10 +72,10 @@ func (e *Encoding) B64decode(ctx context.Context, input []byte, encoding string)
 		enc = base64.StdEncoding
 	}
 	output := make([]byte, enc.DecodedLen(len(input)))
-	_, err := enc.Decode(output, input)
+	n, err := enc.Decode(output, input)
 	if err != nil {
 		common.Throw(common.GetRuntime(ctx), err)
 	}
 
-	return output
+	return output[:n]
 }

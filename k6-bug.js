@@ -36,7 +36,7 @@ function decodeEncodeFails() {
 }
 
 export default function() {
-    //encodeHello();
-    //decodeEncodeWorks();
+    encodeHello();
+    decodeEncodeWorks();
     decodeEncodeFails();
 }
